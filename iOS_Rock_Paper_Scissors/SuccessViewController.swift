@@ -11,8 +11,6 @@ import UIKit
 
 class SuccessViewController: UIViewController {
     
-    var userInput: Int?
-    var computerInput: Int?
     
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var computerImage: UIImageView!
@@ -21,6 +19,11 @@ class SuccessViewController: UIViewController {
     @IBOutlet weak var computerLoose: UILabel!
     
     @IBOutlet weak var winOrLooseMessage: UILabel!
+    
+    @IBOutlet weak var userPlayed: UILabel!
+    @IBOutlet weak var computerPlayed: UILabel!
+    
+    
     
     
     override func viewWillAppear(animated: Bool) {
@@ -36,10 +39,15 @@ class SuccessViewController: UIViewController {
             self.computerImage.alpha = 1.0
         }
         
-        UIView.animateWithDuration(0.5) { () -> Void in
+        UIView.animateWithDuration(0.5) {
             self.winOrLooseMessage.alpha = 1.0
-            self.userLoose.alpha = 1.0
-            self.computerLoose.alpha = 1.0
+            
+            if self.userLoose.hidden == false {
+                self.userLoose.alpha = 1.0
+            } else {
+                self.computerLoose.alpha = 1.0
+            }
+            
         }
         
     }
@@ -52,8 +60,9 @@ class SuccessViewController: UIViewController {
         
         
         //TODO: Set User & Computer Image
-        self.userImage.image = UIImage(named: "item\(userInput)")
-        self.computerImage.image = UIImage(named: "item\(computerInput)")
+        self.userImage.image = UIImage(named: "item\(userInput!)")
+        self.computerImage.image = UIImage(named: "item\(computerInput!)")
+        
         
         
         //Calculate winner and set lables
@@ -63,13 +72,13 @@ class SuccessViewController: UIViewController {
         //TODO: Tie when equal to each other
         //TODO: All other cases user looses
         if userInput == 1 && computerInput == 3{
-            winOrLooseMessage.text = "You Won !!"
+            winOrLooseMessage.text = "You Win, Rock crushes Scissors!"
             computerLoose.hidden = false
         } else if userInput == 2 && computerInput == 1 {
-            winOrLooseMessage.text = "You Won !!"
+            winOrLooseMessage.text = "You Win, Paper covers Rock!"
             computerLoose.hidden = false
         } else if userInput == 3 && computerInput == 2 {
-            winOrLooseMessage.text = "You Won !!"
+            winOrLooseMessage.text = "You Win, Scissor cuts Paper!"
             computerLoose.hidden = false
         } else if userInput == computerInput {
             winOrLooseMessage.text = "TIE"
@@ -89,7 +98,7 @@ class SuccessViewController: UIViewController {
     }
     
     @IBAction func playAgain(sender: AnyObject) {
-        userInput = nil
+        userInput = 0
     }
     
     

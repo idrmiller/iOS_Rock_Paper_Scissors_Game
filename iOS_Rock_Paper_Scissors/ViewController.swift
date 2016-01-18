@@ -28,6 +28,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "scissorSegue" {
+            userInput = 3
+            segue.destinationViewController as! SuccessViewController
+        }
+    }
+    
     //This button changes to the next segue through the storyboard connection
     @IBAction func rockButton(sender: AnyObject) {
         userInput = 1
@@ -42,7 +49,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func scissorButton(sender: AnyObject) {
-        userInput = 3
         
     }
     

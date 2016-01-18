@@ -83,7 +83,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="item2"/>
                                 <connections>
-                                    <segue destination="vsV-mD-o85" kind="presentation" identifier="handSegue" id="nNX-v3-zLd"/>
+                                    <action selector="paperButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VnE-nn-ZWk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQ9-Xt-4e4">
@@ -96,7 +96,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="item3"/>
                                 <connections>
-                                    <action selector="scissorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="39X-FY-MJJ"/>
+                                    <segue destination="vsV-mD-o85" kind="presentation" identifier="scissorSegue" id="adl-d5-3tt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -131,6 +131,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <segue destination="vsV-mD-o85" kind="presentation" identifier="handSegue" id="KTA-N9-AaE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -255,8 +258,10 @@
                     <connections>
                         <outlet property="computerImage" destination="Gne-D5-wdU" id="6sx-SN-Nrg"/>
                         <outlet property="computerLoose" destination="TPI-md-n0P" id="C1M-t2-R8H"/>
+                        <outlet property="computerPlayed" destination="Mwh-6l-wF0" id="6Zo-SG-j6r"/>
                         <outlet property="userImage" destination="Qsh-Qv-2bv" id="03b-Gc-kcu"/>
                         <outlet property="userLoose" destination="KZR-II-Dda" id="tYj-Nj-1me"/>
+                        <outlet property="userPlayed" destination="phL-XG-3Ed" id="mKT-jT-s7o"/>
                         <outlet property="winOrLooseMessage" destination="00b-0z-uXi" id="MbB-gb-QVr"/>
                     </connections>
                 </viewController>
@@ -271,6 +276,6 @@
         <image name="item3" width="93" height="78"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nNX-v3-zLd"/>
+        <segue reference="KTA-N9-AaE"/>
     </inferredMetricsTieBreakers>
 </document>
