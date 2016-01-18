@@ -11,6 +11,8 @@ import UIKit
 
 class SuccessViewController: UIViewController {
     
+    var userInput: Int?
+    var computerInput: Int?
     
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var computerImage: UIImageView!
@@ -27,17 +29,26 @@ class SuccessViewController: UIViewController {
         
     }
     
-    override func viewDidLoad() {
-        userLoose.hidden = true
-        computerLoose.hidden = true
-        winOrLooseMessage.hidden = true
+    override func viewDidAppear(animated: Bool) {
+        
+        UIView.animateWithDuration(0.3) {
+            self.userImage.alpha = 1.0
+            self.computerImage.alpha = 1.0
+        }
+        
+        UIView.animateWithDuration(0.5) { () -> Void in
+            self.winOrLooseMessage.alpha = 1.0
+            self.userLoose.alpha = 1.0
+            self.computerLoose.alpha = 1.0
+        }
+        
     }
     
     func determineWinner() {
         
         //TODO: Create random number between 1-3 and set to computer
         computerInput = Int(1 + arc4random_uniform(26) % 3)
-        print("\(computerInput)")//Test to see if there is a good distribution of random number generator
+        print("Computer input = \(computerInput) and User input = \(userInput)")//Test to see if there is a good distribution of random number generator
         
         
         //TODO: Set User & Computer Image
@@ -46,9 +57,32 @@ class SuccessViewController: UIViewController {
         
         
         //Calculate winner and set lables
-        if computerInput == 1 {
-            
+        //TODO: Rock beats scissors (R = 1 vs S = 3)
+        //TODO: Paper covers rock   (P = 2 vs R = 1)
+        //TODO: Scissors cut paper  (S = 3 vs P = 2)
+        //TODO: Tie when equal to each other
+        //TODO: All other cases user looses
+        if userInput == 1 && computerInput == 3{
+            winOrLooseMessage.text = "You Won !!"
+            computerLoose.hidden = false
+        } else if userInput == 2 && computerInput == 1 {
+            winOrLooseMessage.text = "You Won !!"
+            computerLoose.hidden = false
+        } else if userInput == 3 && computerInput == 2 {
+            winOrLooseMessage.text = "You Won !!"
+            computerLoose.hidden = false
+        } else if userInput == computerInput {
+            winOrLooseMessage.text = "TIE"
+        } else {
+            winOrLooseMessage.text = "You Lost"
+            userLoose.hidden = false
         }
+        
+        self.userImage.alpha = 0
+        self.computerImage.alpha = 0
+        self.userLoose.alpha = 0
+        self.computerLoose.alpha = 0
+        self.winOrLooseMessage.alpha = 0
         
         
         

@@ -8,9 +8,10 @@
 
 import UIKit
 
-var userInput = Int?()
-var computerInput = Int?()
 
+//Created global variables that allows all viewcontrollers to access the userInput and Computer input
+var userInput: Int?
+var computerInput: Int?
 
 class ViewController: UIViewController {
     
@@ -18,6 +19,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        userInput = 0
+        computerInput = 0
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +37,7 @@ class ViewController: UIViewController {
     //This action changes to the next segue through code alone.
     @IBAction func paperButton(sender: AnyObject) {
         userInput = 2
-        performSegueWithIdentifier("ResultsViewController", sender: self)
+        performSegueWithIdentifier("handSegue", sender: self)
         
     }
     
