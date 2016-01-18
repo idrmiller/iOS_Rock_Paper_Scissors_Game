@@ -8,7 +8,12 @@
 
 import UIKit
 
+var userInput = Int?()
+var computerInput = Int?()
+
+
 class ViewController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +24,27 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //This button changes to the next segue through the storyboard connection
+    @IBAction func rockButton(sender: AnyObject) {
+        userInput = 1
+        
+    }
+    
+    //This action changes to the next segue through code alone.
+    @IBAction func paperButton(sender: AnyObject) {
+        userInput = 2
+        performSegueWithIdentifier("ResultsViewController", sender: self)
+        
+    }
+    
+    @IBAction func scissorButton(sender: AnyObject) {
+        userInput = 3
+        
+    }
+    
+    
+    
 
 
 }

@@ -15,6 +15,7 @@
 		D35209081C4C13E40043393D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35209061C4C13E40043393D /* LaunchScreen.storyboard */; };
 		D35209131C4C13E40043393D /* iOS_Rock_Paper_ScissorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35209121C4C13E40043393D /* iOS_Rock_Paper_ScissorsTests.swift */; };
 		D352091E1C4C13E40043393D /* iOS_Rock_Paper_ScissorsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352091D1C4C13E40043393D /* iOS_Rock_Paper_ScissorsUITests.swift */; };
+		D352092E1C4C55610043393D /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352092D1C4C55610043393D /* SuccessViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D35209191C4C13E40043393D /* iOS_Rock_Paper_ScissorsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_Rock_Paper_ScissorsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D352091D1C4C13E40043393D /* iOS_Rock_Paper_ScissorsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Rock_Paper_ScissorsUITests.swift; sourceTree = "<group>"; };
 		D352091F1C4C13E40043393D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D352092D1C4C55610043393D /* SuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				D35208FA1C4C13E40043393D /* AppDelegate.swift */,
 				D35208FC1C4C13E40043393D /* ViewController.swift */,
 				D35208FE1C4C13E40043393D /* Main.storyboard */,
+				D352092D1C4C55610043393D /* SuccessViewController.swift */,
 				D35209041C4C13E40043393D /* Assets.xcassets */,
 				D35209061C4C13E40043393D /* LaunchScreen.storyboard */,
 				D35209091C4C13E40043393D /* Info.plist */,
@@ -261,6 +264,7 @@
 				D35208FD1C4C13E40043393D /* ViewController.swift in Sources */,
 				D35208FB1C4C13E40043393D /* AppDelegate.swift in Sources */,
 				D35209031C4C13E40043393D /* iOS_Rock_Paper_Scissors.xcdatamodeld in Sources */,
+				D352092E1C4C55610043393D /* SuccessViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
